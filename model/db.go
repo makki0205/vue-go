@@ -13,20 +13,17 @@ import (
 var db = NewDBConn()
 
 func NewDBConn() *gorm.DB {
-	driver, resource := "mysql", "root:password@tcp(127.0.0.1:3306)/lavender?parseTime=true&collation=utf8_general_ci&interpolateParams=true&loc=Local"
-	if os.Getenv("lavender") == "develop" {
-		driver, resource = GetDBConfig("dbconfig.yml", "develop")
+	db_source := "develop"
+	if os.Getenv("DB_SOURCE") != "" {
+		db_source = os.Getenv("DB_SOURCE")
 	}
-	if os.Getenv("lavender") == "production" {
-		driver, resource = GetDBConfig("dbconfig.yml", "development")
-	}
-	db, err := gorm.Open(driver, resource)
+	db, err := gorm.Open(GetDBConfig("dbconfig.yml", db_source))
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("DB: "+resource)
 	return db
 }
+
 
 func GetDBConn() *gorm.DB {
 	return db

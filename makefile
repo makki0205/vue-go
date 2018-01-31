@@ -2,10 +2,10 @@ create:
 	cp dbconfig.yml.template dbconfig.yml
 	
 migrate:
-	sql-migrate $(@F) -env="development" -config="dbconfig.yml"
+	go run cmd/migrate.go
 
 run:
-	env lavender=production go run main.go
+	env DB_SOURCE=production go run main.go
 
 docker/build:
 	make -f .circleci/ci.mk go/build
