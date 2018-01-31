@@ -1,0 +1,57 @@
+version: 2
+jobs:
+
+  test:
+    working_directory: /go/src/github.com/alberii/lavender
+    docker:
+      - image: konojunya/rose
+    steps:
+      - checkout
+      - run:
+         name: npm install
+         command: npm install
+      - run:
+          name: component build
+          command: env NODE_ENV=production npm run build
+      - run:
+          name: go build
+          command: make -f .circleci/ci.mk go/build
+      - save_cache:
+          key: build-{{ epoch }}
+          paths:
+            - .
+
+  deploy:
+    working_directory: /go/src/github.com/alberii/lavender
+    docker:
+      - image: konojunya/rose
+    steps:
+      - setup_remote_docker:
+          reusable: true
+      - restore_cache:
+          keys:
+            - build
+      - run:
+          name: docker build
+          command: make -f .circleci/ci.mk docker/build
+#      - run:
+#          name: aws login
+#          command: make -f .circleci/ci.mk login
+#      - run:
+#          name: docker push
+#          command: make -f .circleci/ci.mk docker/push
+#      - run:
+#          name: deploy
+#          command: make -f .circleci/ci.mk docker/deploy TIMESTAMP=(date +'%s')
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
