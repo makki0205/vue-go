@@ -1,12 +1,14 @@
 <template>
-    <h1>hello</h1>
+    <side-bar></side-bar>
 </template>
+
 <script>
-    export default {
-        name: "index"
-    }
+import SideBar from '../modules/sidebar.vue'
+
+export default {
+  name: "index",
+  components: {
+    SideBar
+  }
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
