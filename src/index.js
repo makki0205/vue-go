@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from './components/index/index.vue'
-import NotFound from './components/notFound/notFound.vue'
+import Index from './components/pages/index.vue'
+import NotFound from './components/pages/notFound.vue'
 
 Vue.component('index', Index)
 

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/makki0205/template/router"
+import "github.com/aykikr/recipo/router"
 
 func main() {
 	r := router.GetRouter()
