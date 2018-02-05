@@ -12,6 +12,6 @@ func BatRequest(err string, c *gin.Context) {
 	})
 }
 
-func json(obj interface{}, c *gin.Context) {
+func Json(obj interface{}, c *gin.Context) {
 	c.JSON(http.StatusOK, obj)
 }

@@ -21,20 +21,5 @@ func (u *userimpl) Create(c *gin.Context) {
 		return
 	}
 	user = service.User.Store(user)
-	json(user, c)
-}
-
-func (u *userimpl) Login(c *gin.Context) {
-	var req model.User
-	err := c.BindJSON(&req)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, err.Error())
-		return
-	}
-	user, ok := service.User.Login(req.Email, req.Password)
-	if !ok {
-		BatRequest("ログイン失敗", c)
-	}
-	token := service.Token.Create(user.ID)
-	json(token, c)
+	Json(user, c)
 }
