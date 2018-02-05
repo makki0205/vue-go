@@ -12,6 +12,16 @@ type Model struct {
 }
 
 type User struct {
-	Email    string
-	Password string
+	Model
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+type Token struct {
+	Model
+	UserID uint
+	Body   string
+}
+
+type Recipi struct {
+	Model
 }
