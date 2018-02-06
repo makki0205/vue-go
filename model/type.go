@@ -13,8 +13,8 @@ type Model struct {
 
 type User struct {
 	Model
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	Email    string `json:"email" binding:"required"`
+	Password string `json:"password" binding:"required"`
 }
 type Token struct {
 	Model
