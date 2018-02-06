@@ -9,6 +9,11 @@ import (
 func apiRouter(api *gin.RouterGroup) {
 	api.POST("/signup", User.Create)
 	api.POST("/signin", middleware.Login)
-	auth := api.Group("")
-	auth.Use(middleware.Jwt("hogehoge", 3600*24*365))
+
+}
+
+func authApiRouter(auth *gin.RouterGroup) {
+	auth.GET("/hoge", func(c *gin.Context) {
+		c.JSON(200, "ok")
+	})
 }

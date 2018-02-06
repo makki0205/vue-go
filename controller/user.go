@@ -3,9 +3,9 @@ package controller
 import (
 	"net/http"
 
-	"github.com/aykikr/recipo/model"
-	"github.com/aykikr/recipo/service"
 	"github.com/gin-gonic/gin"
+	"github.com/makki0205/vue-go/model"
+	"github.com/makki0205/vue-go/service"
 )
 
 var User = userimpl{}

@@ -3,7 +3,6 @@ package model
 import (
 	"io/ioutil"
 	"os"
-	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
@@ -23,7 +22,6 @@ func NewDBConn() *gorm.DB {
 	}
 	return db
 }
-
 
 func GetDBConn() *gorm.DB {
 	return db

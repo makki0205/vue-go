@@ -1,5 +1,5 @@
 package service
 
-import "github.com/aykikr/recipo/model"
+import "github.com/makki0205/vue-go/model"
 
 var db = model.GetDBConn()

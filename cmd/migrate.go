@@ -1,6 +1,6 @@
 package main
 
-import "github.com/aykikr/recipo/model"
+import "github.com/makki0205/vue-go/model"
 
 func main() {
 	db := model.GetDBConn()
