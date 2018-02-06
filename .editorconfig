@@ -1,7 +1,7 @@
 # editorconfig.org
 root = true
 
-[*.js]
+[*.js,*.vue]
 indent_style=space
 end_of_line=lf
 indent_size=2
