@@ -1,6 +1,6 @@
 FROM alpine:3.6
 WORKDIR /root
-ENV lavender production
+ENV DB_SOURCE production
 
 RUN set -x \
   && apk upgrade --no-cache \
@@ -9,6 +9,8 @@ RUN set -x \
   && apk del tzdata \
   && rm -rf /var/cache/apk/*
 
+
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 
 ADD ./cmd/main .
 ADD ./public ./public
