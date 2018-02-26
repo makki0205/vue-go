@@ -2,9 +2,9 @@ version: 2
 jobs:
 
   test:
-    working_directory: /go/src/github.com/alberii/lavender
+    working_directory: /go/src/github.com/makki0205/vue-go
     docker:
-      - image: konojunya/rose
+      - image: makki0205/deploy
     steps:
       - checkout
       - run:
@@ -22,9 +22,9 @@ jobs:
             - .
 
   deploy:
-    working_directory: /go/src/github.com/alberii/lavender
+    working_directory: /go/src/github.com/makki0205/vue-go
     docker:
-      - image: konojunya/rose
+      - image: makki0205/deploy
     steps:
       - setup_remote_docker:
           reusable: true
