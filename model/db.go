@@ -21,5 +21,5 @@ func GetDBConn() *gorm.DB {
 }
 
 func GetDBConfig() (string, string) {
-	return config.Env("dialect"), config.Env("dialect")
+	return config.Env("dialect"), config.Env("datasource")
 }

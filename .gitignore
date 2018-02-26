@@ -12,7 +12,6 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
-dbconfig.yml
 ### https://raw.github.com/github/gitignore/35c010258fc790ad769033e9ccfb1021178f2925/Node.gitignore
 
 # Logs
@@ -109,3 +108,4 @@ Temporary Items
 main
 index.bundle.js.map
 index.bundle.js
+config.yml
