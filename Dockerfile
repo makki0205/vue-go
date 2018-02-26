@@ -1,6 +1,6 @@
 FROM alpine:3.6
 WORKDIR /root
-ENV DB_SOURCE production
+ENV GO_ENV production
 
 RUN set -x \
   && apk upgrade --no-cache \
