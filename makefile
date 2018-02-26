@@ -1,5 +1,5 @@
 create:
-	cp dbconfig.yml.template dbconfig.yml
+	cp config.yml.template config.yml
 	
 migrate:
 	go run cmd/migrate.go
