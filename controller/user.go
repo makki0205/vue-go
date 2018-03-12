@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/makki0205/vue-go/model"
-	"github.com/makki0205/vue-go/service"
+	"github.com/chotchy-inc/PATRAProductAPI/model"
+	"github.com/chotchy-inc/PATRAProductAPI/service"
 )
 
 var User = userimpl{}

@@ -1,5 +1,5 @@
 package service
 
-import "github.com/makki0205/vue-go/model"
+import "github.com/chotchy-inc/PATRAProductAPI/model"
 
 var db = model.GetDBConn()

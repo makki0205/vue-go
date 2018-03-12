@@ -1,6 +1,6 @@
 package main
 
-import "github.com/makki0205/vue-go/model"
+import "github.com/chotchy-inc/PATRAProductAPI/model"
 
 func main() {
 	db := model.GetDBConn()
