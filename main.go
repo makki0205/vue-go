@@ -1,6 +1,6 @@
 package main
 
-import "github.com/chotchy-inc/PATRAProductAPI/router"
+import "github.com/makki0205/vue-go/router"
 
 func main() {
 	r := router.GetRouter()
